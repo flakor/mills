@@ -1,6 +1,8 @@
 const router = require('express-promise-router')();
 const mongojs = require('mongojs');
-const db = mongojs('mean-tasks', ['tasks']);
+// const db = mongojs('mean-tasks', ['tasks']);
+const db = mongojs('mongodb://mills:mills@ds123490.mlab.com:23490/mean-tasks', ['tasks']);
+
 
 // GET All tasks
 router.get('/tasks', (req, res, next) => {
@@ -45,7 +47,7 @@ router.delete('/tasks/:id', (req, res, next) => {
 router.put('/tasks/:id', (req, res, next) => {
     const task = req.body;
     let updateTask = {};
-    
+
     if(task.isDone) {
         updateTask.isDone = task.isDone;
     }
