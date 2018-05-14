@@ -254,10 +254,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var TaskService = (function () {
-    // domain: string = 'www.mydomainapi.com/';
     function TaskService(http) {
         this.http = http;
-        this.domain = 'http://localhost:3000';
+        // domain: string = 'http://localhost:3000';
+        this.domain = 'https://new-mills.herokuapp.com';
     }
     TaskService.prototype.getTasks = function () {
         return this.http.get(this.domain + "/api/tasks")

@@ -7,7 +7,7 @@ import { Task } from '../Task' ;
 @Injectable()
 export class TaskService {
   // domain: string = 'http://localhost:3000';
-  domain: string = 'https://new-mills.herokuapp.com/';
+  domain: string = 'https://new-mills.herokuapp.com';
 
   constructor(private http: HttpClient) {
   }
