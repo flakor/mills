@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
-const indexRoutes = require('./routes/index');
+// const indexRoutes = require('./routes/index');
 const tasksRoutes = require('./routes/tasks');
 
 const app = express();
@@ -29,4 +29,4 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // start the server
 app.listen(app.get('port'), () => {
     console.log('server on port 3000');
-}); 
+});
