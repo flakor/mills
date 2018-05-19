@@ -578,8 +578,7 @@ var AuthenticationService = (function () {
     function AuthenticationService(http, router) {
         this.http = http;
         this.router = router;
-        //domain: string = 'http://localhost:3000';
-        this.domain = 'https://new-mills.herokuapp.com';
+        this.domain = 'http://localhost:3000';
     }
     AuthenticationService.prototype.saveToken = function (token) {
         localStorage.setItem('mean-token', token);
@@ -675,10 +674,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var TaskService = (function () {
+    // domain: string = 'https://new-mills.herokuapp.com';
     function TaskService(http) {
         this.http = http;
-        //  domain: string = 'http://localhost:3000';
-        this.domain = 'https://new-mills.herokuapp.com';
+        this.domain = 'http://localhost:3000';
     }
     TaskService.prototype.getTasks = function () {
         return this.http.get(this.domain + "/api/tasks")
