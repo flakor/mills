@@ -1,7 +1,27 @@
 const router = require('express-promise-router')();
 const mongojs = require('mongojs');
+const config = require('../../config');
 // const db = mongojs('mean-tasks', ['tasks']);
-const db = mongojs('mongodb://mills:mills@ds123490.mlab.com:23490/mean-tasks', ['tasks']);
+const db = mongojs(config.database, ['tasks']);
+
+//////////////////////API USER/////////////
+const jwt = require('express-jwt');
+const auth = jwt({
+  secret: 'MY_SECRET',
+  userProperty: 'payload'
+});
+
+const ctrlProfile = require('../controllers/profile');
+const ctrlAuth = require('../controllers/authentication');
+
+// API USUARIOS
+// profile
+router.get('/profile', auth, ctrlProfile.profileRead);
+
+// authentication
+router.post('/register', ctrlAuth.register);
+router.post('/login', ctrlAuth.login);
+/////////////////////////////////////////
 
 
 // GET All tasks

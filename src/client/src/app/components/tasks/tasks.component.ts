@@ -22,7 +22,7 @@ export class TasksComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
   addTask(event){
@@ -35,12 +35,12 @@ export class TasksComponent implements OnInit {
       .subscribe(task => {
         this.tasks.push(task);
         this.title = '';
-      })        
+      })
   }
 
   deleteTask(id) {
-    const response = confirm('are you sure to delete it?');
-    if (response ){
+  
+    if (!id == false ){
       const tasks = this.tasks;
       this.taskService.deleteTask(id)
         .subscribe(data => {
@@ -54,10 +54,10 @@ export class TasksComponent implements OnInit {
           }
         })
     }
-  }                 
+  }
 
   updateStatus(task: Task) {
-    var newTask = {            
+    var newTask = {
       _id: task._id,
       title: task.title,
       isDone: !task.isDone
