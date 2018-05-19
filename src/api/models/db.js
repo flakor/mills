@@ -2,8 +2,6 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
 const config = require('../../config');
-
-console.log(config);
 var dbURI = config.database;
 if (process.env.NODE_ENV === 'production') {
   dbURI = process.env.MONGOLAB_URI;

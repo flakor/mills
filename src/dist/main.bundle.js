@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <a class=\"navbar-brand\" routerLink=\"/\">Home</a>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\n    <div class=\"navbar-nav\">\n      <a class=\"nav-item nav-link\" *ngIf=\"!auth.isLoggedIn()\" routerLink=\"/login\">Sign in</a>\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" routerLink=\"/profile\">{{ auth.getUserDetails()?.name }}</a>\n      <a class=\"nav-item nav-link disabled\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\">Logout</a>\n    </div>\n  </div>\n</nav>\n\n  <div class=\"row\">\n      <img width=\"300\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n      <router-outlet></router-outlet>\n\n  </div>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar navbar-light\" style=\"background-color: #E6E6E6;\">\n  <a class=\"navbar-brand\" routerLink=\"/\">Home Tasks</a>\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\n    <div class=\"navbar-nav\">\n      <a class=\"nav-item nav-link\" *ngIf=\"!auth.isLoggedIn()\" routerLink=\"/login\">Sign in</a>\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" routerLink=\"/profile\"><fa name=\"user\"></fa> {{ auth.getUserDetails()?.name }}</a>\n\n</div>\n    <div class=\"navbar-nav ml-auto\">\n      <!-- <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a> -->\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a>\n    </div>\n  </div>\n</nav>\n\n      <router-outlet></router-outlet>\n\n<footer class=\"footer\">\n    <div class=\"container\">\n        <p class=\"text-muted\">&copy; Copyright 2018 | Condor Code factory</p>\n    </div>\n</footer>\n"
 
 /***/ }),
 
@@ -66,19 +66,24 @@ var AppComponent = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__toverux_ngx_sweetalert2__ = __webpack_require__("../../../../@toverux/ngx-sweetalert2/esm5/toverux-ngx-sweetalert2.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_tasks_tasks_component__ = __webpack_require__("../../../../../src/app/components/tasks/tasks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_authentication_service__ = __webpack_require__("../../../../../src/app/services/authentication.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toverux_ngx_sweetalert2__ = __webpack_require__("../../../../@toverux/ngx-sweetalert2/esm5/toverux-ngx-sweetalert2.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular_font_awesome__ = __webpack_require__("../../../../angular-font-awesome/dist/angular-font-awesome.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_tasks_tasks_component__ = __webpack_require__("../../../../../src/app/components/tasks/tasks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_authentication_service__ = __webpack_require__("../../../../../src/app/services/authentication.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -99,41 +104,89 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
 var routes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_10__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_auth_guard_service__["a" /* AuthGuardService */]] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_15__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__services_auth_guard_service__["a" /* AuthGuardService */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_tasks_tasks_component__["a" /* TasksComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__["a" /* RegisterComponent */]
+                __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__components_tasks_tasks_component__["a" /* TasksComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__components_register_register_component__["a" /* RegisterComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_4__toverux_ngx_sweetalert2__["a" /* SweetAlert2Module */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_5__toverux_ngx_sweetalert2__["a" /* SweetAlert2Module */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__toverux_ngx_sweetalert2__["a" /* SweetAlert2Module */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* RouterModule */].forRoot(routes),
+                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__toverux_ngx_sweetalert2__["a" /* SweetAlert2Module */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* RouterModule */].forRoot(routes),
+                __WEBPACK_IMPORTED_MODULE_7_angular_font_awesome__["a" /* AngularFontAwesomeModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_9_ngx_toastr__["a" /* ToastrModule */].forRoot(),
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_12__services_authentication_service__["a" /* AuthenticationService */],
-                __WEBPACK_IMPORTED_MODULE_13__services_auth_guard_service__["a" /* AuthGuardService */]
+                __WEBPACK_IMPORTED_MODULE_16__services_authentication_service__["a" /* AuthenticationService */],
+                __WEBPACK_IMPORTED_MODULE_17__services_auth_guard_service__["a" /* AuthGuardService */],
+                __WEBPACK_IMPORTED_MODULE_18__common_toastr_service__["a" /* ToastrService */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/common/toastr.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastrService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var ToastrService = (function () {
+    function ToastrService() {
+    }
+    ToastrService.prototype.success = function (message, title) {
+        toastr.success(message, title);
+    };
+    ToastrService.prototype.info = function (message, title) {
+        toastr.info(message, title);
+    };
+    ToastrService.prototype.warning = function (message, title) {
+        toastr.warning(message, title);
+    };
+    ToastrService.prototype.error = function (message, title) {
+        toastr.error(message, title);
+    };
+    ToastrService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
+    ], ToastrService);
+    return ToastrService;
 }());
 
 
@@ -190,6 +243,7 @@ module.exports = "<div class=\"card m-3\">\n  <div class=\"card-body\">\n\n\n\n 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__("../../../../../src/app/services/authentication.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/fesm5/ngx-toastr.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -202,10 +256,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LoginComponent = (function () {
-    function LoginComponent(auth, router) {
+    function LoginComponent(auth, router, toastr) {
         this.auth = auth;
         this.router = router;
+        this.toastr = toastr;
         this.credentials = {
             email: '',
             password: ''
@@ -214,16 +270,18 @@ var LoginComponent = (function () {
     LoginComponent.prototype.login = function () {
         var _this = this;
         this.auth.login(this.credentials).subscribe(function () {
+            _this.toastr.success('Login successful.');
             _this.router.navigateByUrl('/profile');
         }, function (err) {
             console.error(err);
+            _this.toastr.error(err);
         });
     };
     LoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             template: __webpack_require__("../../../../../src/app/components/login/login.component.html")
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */], __WEBPACK_IMPORTED_MODULE_3_ngx_toastr__["b" /* ToastrService */]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -235,7 +293,7 @@ var LoginComponent = (function () {
 /***/ "../../../../../src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card m-3\">\n  <div class=\"card-body\">\n\n     <div class=\"col-md-6\">\n\n      <h1 class=\"form-signin-heading\">Your profile</h1>\n\n      <div class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <label class=\"col-sm-3 control-label\">Full name</label>\n          <p class=\"form-control-static\">{{ details?.name }}</p>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"col-sm-3 control-label\">Email</label>\n          <p class=\"form-control-static\">{{ details?.email }}</p>\n        </div>\n      </div>\n\n    </div>\n    <div class=\"col-md-7\">\n      <app-tasks></app-tasks>\n    </div>\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"card m-5\">\n  <div class=\"card-body\">\n\n\n\n      <h1 class=\"form-signin-heading\">Your profile Tasks</h1>\n\n      <div class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <p class=\"form-control-static\"><fa name=\"user\"></fa> {{ details?.name }} - <fa name=\"envelope\"></fa> {{ details?.email }}</p>\n          <p class=\"form-control-static\"></p>\n        </div>\n      </div>\n\n\n\n      <app-tasks></app-tasks>\n\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -361,7 +419,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/tasks/tasks.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card m-3\">\n  <div class=\"card-body\">\n    <form (submit)=\"addTask($event)\">\n      <div class=\"input-group\">\n          <input type=\"text\" [(ngModel)]=\"title\" name=\"title\" class=\"form-control\" placeholder=\"Add A Task\">\n          <span class=\"input-group-addon\">\n              <button type=\"submit\" class=\"btn btn-primary\">\n                  Add A task\n                </button>\n          </span>\n      </div>\n      </form>\n  </div>\n</div>\n\n<table class=\"table text-center table-hover\">\n  <thead>\n    <tr>\n      <th>Status</th>\n      <th>Title</th>\n      <th>Operations</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let task of tasks\">\n      <td>\n        <input type=\"checkbox\" [checked]=\"task.isDone\" (click)=\"updateStatus(task)\">\n      </td>\n      <td>{{ task.title }}</td>\n      <td>\n        <swal\n          #deleteSwal\n          title=\"Delete {{ task.title }}?\"\n          text=\"Swal confirm\"\n          type=\"warning\"\n          [showCancelButton]=\"true\"\n          [focusCancel]=\"true\"\n          (confirm)=\"deleteTask(task._id)\">\n        </swal>\n        <button class=\"btn btn-danger\" (click)=\"deleteSwal.show()\">\n          <i class=\"fa fa-trash\"></i>\n        </button>\n      </td>\n    </tr>\n  </tbody>\n</table>\n"
+module.exports = "\n    <form (submit)=\"addTask($event)\">\n      <div class=\"input-group\">\n          <input type=\"text\" [(ngModel)]=\"title\" name=\"title\" class=\"form-control\" placeholder=\"Add A Task\">\n          <span class=\"input-group-addon\">\n              <button type=\"submit\" class=\"btn btn-primary\">\n                  Add A task\n                </button>\n          </span>\n      </div>\n      </form>\n\n\n<table class=\"table text-center table-hover\">\n  <thead>\n    <tr>\n      <th>Status</th>\n      <th>Title</th>\n      <th>Operations</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let task of tasks\">\n      <td>\n        <input type=\"checkbox\" [checked]=\"task.isDone\" (click)=\"updateStatus(task)\">\n      </td>\n      <td>{{ task.title }}</td>\n      <td>\n        <swal\n          #deleteSwal\n          title=\"Delete {{ task.title }}?\"\n          text=\"Swal confirm\"\n          type=\"warning\"\n          [showCancelButton]=\"true\"\n          [focusCancel]=\"true\"\n          (confirm)=\"deleteTask(task._id)\">\n        </swal>\n        <button class=\"btn btn-danger\" (click)=\"deleteSwal.show()\">\n          <i class=\"fa fa-trash\"></i>\n        </button>\n      </td>\n    </tr>\n  </tbody>\n</table>\n"
 
 /***/ }),
 
@@ -520,6 +578,8 @@ var AuthenticationService = (function () {
     function AuthenticationService(http, router) {
         this.http = http;
         this.router = router;
+        //domain: string = 'http://localhost:3000';
+        this.domain = 'https://new-mills.herokuapp.com';
     }
     AuthenticationService.prototype.saveToken = function (token) {
         localStorage.setItem('mean-token', token);
@@ -556,10 +616,10 @@ var AuthenticationService = (function () {
         var _this = this;
         var base;
         if (method === 'post') {
-            base = this.http.post("/api/" + type, user);
+            base = this.http.post(this.domain + "/api/" + type, user);
         }
         else {
-            base = this.http.get("/api/" + type, { headers: { Authorization: "Bearer " + this.getToken() } });
+            base = this.http.get(this.domain + "/api/" + type, { headers: { Authorization: "Bearer " + this.getToken() } });
         }
         var request = base.pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map__["a" /* map */])(function (data) {
             if (data.token) {
@@ -615,10 +675,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var TaskService = (function () {
-    // domain: string = 'https://new-mills.herokuapp.com';
     function TaskService(http) {
         this.http = http;
-        this.domain = 'http://localhost:3000';
+        //  domain: string = 'http://localhost:3000';
+        this.domain = 'https://new-mills.herokuapp.com';
     }
     TaskService.prototype.getTasks = function () {
         return this.http.get(this.domain + "/api/tasks")
