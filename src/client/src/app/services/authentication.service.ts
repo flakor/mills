@@ -25,8 +25,8 @@ export interface TokenPayload {
 @Injectable()
 export class AuthenticationService {
   private token: string;
-domain: string = 'http://localhost:3000';
-    //domain: string = 'https://new-mills.herokuapp.com';
+// domain: string = 'http://localhost:3000';
+  domain: string = 'https://new-mills.herokuapp.com';
 
   constructor(private http: HttpClient, private router: Router) {}
 

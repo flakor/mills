@@ -109,6 +109,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */] },
@@ -143,7 +144,8 @@ var AppModule = (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_16__services_authentication_service__["a" /* AuthenticationService */],
                 __WEBPACK_IMPORTED_MODULE_17__services_auth_guard_service__["a" /* AuthGuardService */],
-                __WEBPACK_IMPORTED_MODULE_18__common_toastr_service__["a" /* ToastrService */]
+                __WEBPACK_IMPORTED_MODULE_18__common_toastr_service__["a" /* ToastrService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* LocationStrategy */], useClass: __WEBPACK_IMPORTED_MODULE_1__angular_common__["d" /* HashLocationStrategy */] }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
         })
@@ -578,7 +580,7 @@ var AuthenticationService = (function () {
     function AuthenticationService(http, router) {
         this.http = http;
         this.router = router;
-        //domain: string = 'http://localhost:3000';
+        // domain: string = 'http://localhost:3000';
         this.domain = 'https://new-mills.herokuapp.com';
     }
     AuthenticationService.prototype.saveToken = function (token) {
