@@ -26,7 +26,7 @@ export interface TokenPayload {
 export class AuthenticationService {
   private token: string;
 // domain: string = 'http://localhost:3000';
-  domain: string = 'https://new-mills.herokuapp.com';
+  domain: string = '/';
 
   constructor(private http: HttpClient, private router: Router) {}
 
