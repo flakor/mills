@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
 const config = require('../../config');
-var dbURI = 'mongodb://mills:mills@ds123490.mlab.com:23490/mean-tasks';
+var dbURI = config.database;
 if (process.env.NODE_ENV === 'production') {
   dbURI = process.env.MONGOLAB_URI;
 }
