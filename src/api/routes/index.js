@@ -7,7 +7,7 @@ const db = mongojs(config.database, ['tasks']);
 //////////////////////API USER/////////////
 const jwt = require('express-jwt');
 const auth = jwt({
-  secret: 'MY_SECRET',
+  secret: config.secret,
   userProperty: 'payload'
 });
 

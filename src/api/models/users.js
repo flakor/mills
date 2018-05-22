@@ -1,8 +1,8 @@
-var mongoose = require( 'mongoose' );
-var crypto = require('crypto');
-var jwt = require('jsonwebtoken');
-
-var userSchema = new mongoose.Schema({
+const mongoose = require( 'mongoose' );
+const crypto = require('crypto');
+const jwt = require('jsonwebtoken');
+const config = require('../../config');
+const userSchema = new mongoose.Schema({
   email: {
     type: String,
     unique: true,
@@ -35,7 +35,7 @@ userSchema.methods.generateJwt = function() {
     email: this.email,
     name: this.name,
     exp: parseInt(expiry.getTime() / 1000),
-  }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
+  }, config.secret); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };
 
 mongoose.model('User', userSchema);
