@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-const gracefulShutdown;
+var gracefulShutdown;
 const config = require('../../config');
 const dbURI = config.database;
 if (process.env.NODE_ENV === 'production') {
