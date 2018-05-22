@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { TasksComponent } from './components/tasks/tasks.component';
@@ -48,6 +49,7 @@ const routes: Routes = [
     AngularFontAwesomeModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    NgbCollapseModule.forRoot()
   ],
   providers: [
     AuthenticationService,

@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar navbar-light\" style=\"background-color: #E6E6E6;\">\n\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n<a class=\"navbar-brand\" routerLink=\"/\">Home Tasks</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\n    <div class=\"navbar-nav\">\n      <a class=\"nav-item nav-link\" *ngIf=\"!auth.isLoggedIn()\" routerLink=\"/login\">Sign in</a>\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" routerLink=\"/profile\"><fa name=\"user\"></fa> {{ auth.getUserDetails()?.name }}</a>\n    </div>\n    <div class=\"navbar-nav ml-auto\">\n      <!-- <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a> -->\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a>\n    </div>\n  </div>\n</nav>\n\n      <router-outlet></router-outlet>\n\n<footer class=\"footer\">\n    <div class=\"container\">\n        <p class=\"text-muted\">&copy; Copyright 2018 | Condor Code factory</p>\n    </div>\n</footer>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar navbar-light\" style=\"background-color: #E6E6E6;\">\n\n  <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n<a class=\"navbar-brand\" routerLink=\"/\">Home Tasks</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\n    <div class=\"navbar-nav\">\n      <a class=\"nav-item nav-link\" *ngIf=\"!auth.isLoggedIn()\" routerLink=\"/login\">Sign in</a>\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" routerLink=\"/profile\"><fa name=\"user\"></fa> {{ auth.getUserDetails()?.name }}</a>\n    </div>\n    <div class=\"navbar-nav ml-auto\">\n      <!-- <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a> -->\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a>\n    </div>\n  </div>\n</nav>\n\n      <router-outlet></router-outlet>\n\n<footer class=\"footer\">\n    <div class=\"container\">\n        <p class=\"text-muted\">&copy; Copyright 2018 | Condor Code factory</p>\n    </div>\n</footer>\n"
 
 /***/ }),
 
@@ -75,15 +75,16 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular_font_awesome__ = __webpack_require__("../../../../angular-font-awesome/dist/angular-font-awesome.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/fesm5/ngx-toastr.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_tasks_tasks_component__ = __webpack_require__("../../../../../src/app/components/tasks/tasks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_authentication_service__ = __webpack_require__("../../../../../src/app/services/authentication.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth-guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_tasks_tasks_component__ = __webpack_require__("../../../../../src/app/components/tasks/tasks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_authentication_service__ = __webpack_require__("../../../../../src/app/services/authentication.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -110,24 +111,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_15__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__services_auth_guard_service__["a" /* AuthGuardService */]] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_16__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__services_auth_guard_service__["a" /* AuthGuardService */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_tasks_tasks_component__["a" /* TasksComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__components_register_register_component__["a" /* RegisterComponent */]
+                __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__components_tasks_tasks_component__["a" /* TasksComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__components_register_register_component__["a" /* RegisterComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
@@ -140,14 +142,15 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_7_angular_font_awesome__["a" /* AngularFontAwesomeModule */],
                 __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_9_ngx_toastr__["a" /* ToastrModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_10__ng_bootstrap_ng_bootstrap__["a" /* NgbCollapseModule */].forRoot()
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_16__services_authentication_service__["a" /* AuthenticationService */],
-                __WEBPACK_IMPORTED_MODULE_17__services_auth_guard_service__["a" /* AuthGuardService */],
-                __WEBPACK_IMPORTED_MODULE_18__common_toastr_service__["a" /* ToastrService */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* LocationStrategy */], useClass: __WEBPACK_IMPORTED_MODULE_1__angular_common__["d" /* HashLocationStrategy */] }
+                __WEBPACK_IMPORTED_MODULE_17__services_authentication_service__["a" /* AuthenticationService */],
+                __WEBPACK_IMPORTED_MODULE_18__services_auth_guard_service__["a" /* AuthGuardService */],
+                __WEBPACK_IMPORTED_MODULE_19__common_toastr_service__["a" /* ToastrService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_common__["i" /* LocationStrategy */], useClass: __WEBPACK_IMPORTED_MODULE_1__angular_common__["f" /* HashLocationStrategy */] }
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -186,7 +189,7 @@ var ToastrService = (function () {
         toastr.error(message, title);
     };
     ToastrService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])()
     ], ToastrService);
     return ToastrService;
 }());
@@ -544,7 +547,7 @@ var AuthGuardService = (function () {
         return true;
     };
     AuthGuardService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__authentication_service__["a" /* AuthenticationService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]])
     ], AuthGuardService);
     return AuthGuardService;
@@ -646,7 +649,7 @@ var AuthenticationService = (function () {
         this.router.navigateByUrl('/');
     };
     AuthenticationService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]])
     ], AuthenticationService);
     return AuthenticationService;
@@ -699,7 +702,7 @@ var TaskService = (function () {
             .map(function (res) { return res; });
     };
     TaskService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], TaskService);
     return TaskService;
@@ -739,7 +742,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
