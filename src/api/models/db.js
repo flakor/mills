@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 var gracefulShutdown;
 const config = require('../../config');
 const dbURI = config.database;
-if (process.env.NODE_ENV === 'production') {
-  dbURI = process.env.MONGOLAB_URI;
-}
+// if (process.env.NODE_ENV === 'production') {
+//   dbURI = process.env.MONGOLAB_URI;
+// }
 
 mongoose.connect(dbURI);
 
