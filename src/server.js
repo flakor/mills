@@ -41,7 +41,7 @@ app.use(passport.initialize());
 app.use('/api', routesApi);
 
 // static files
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, './client/dist')));
 
 // start the server
 app.listen(app.get('port'), () => {
