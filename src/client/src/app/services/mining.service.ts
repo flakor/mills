@@ -7,8 +7,8 @@ import { Mining } from '../Mining' ;
 
 @Injectable()
 export class MiningService {
-  domain: string = 'http://localhost:3000';
-
+  //domain: string = 'http://localhost:3000';
+  domain: string = 'https://new-mills.herokuapp.com';
   constructor(private http: HttpClient) {}
 
     getMinings(){
