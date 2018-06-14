@@ -39,11 +39,12 @@ export class TasksComponent implements OnInit {
   }
 
   deleteTask(id) {
-  
+
     if (!id == false ){
       const tasks = this.tasks;
       this.taskService.deleteTask(id)
         .subscribe(data => {
+          console.log(data)
           console.log(data.n);
           if(data.n == 1) {
             for(let i = 0; i < tasks.length; i++) {

@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar navbar-light\" style=\"background-color: #E6E6E6;\">\n\n  <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n<a class=\"navbar-brand\" routerLink=\"/\">Home Tasks</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\n    <div class=\"navbar-nav\">\n      <a class=\"nav-item nav-link\" *ngIf=\"!auth.isLoggedIn()\" routerLink=\"/login\">Sign in</a>\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" routerLink=\"/profile\"><fa name=\"user\"></fa> {{ auth.getUserDetails()?.name }}</a>\n    </div>\n    <div class=\"navbar-nav ml-auto\">\n      <!-- <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a> -->\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a>\n    </div>\n  </div>\n</nav>\n\n      <router-outlet></router-outlet>\n\n<footer class=\"footer\">\n    <div class=\"container\">\n        <p class=\"text-muted\">&copy; Copyright 2018 | Condor Code factory</p>\n    </div>\n</footer>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar navbar-light\" style=\"background-color: #E6E6E6;\">\n\n  <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n     <span class=\"navbar-toggler-icon\"></span>\n   </button>\n<a class=\"navbar-brand\" routerLink=\"/\">Home Tasks</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\n    <div class=\"navbar-nav\">\n      <a class=\"nav-item nav-link\" *ngIf=\"!auth.isLoggedIn()\" routerLink=\"/login\">Sign in</a>\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" routerLink=\"/profile\"><fa name=\"user\"></fa> {{ auth.getUserDetails()?.name }}</a>\n    </div>\n    <div class=\"navbar-nav ml-auto\">\n      <!-- <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a> -->\n      <a class=\"nav-item nav-link\" *ngIf=\"auth.isLoggedIn()\" (click)=\"auth.logout()\"><fa name=\"sign-out\"></fa>Logout</a>\n    </div>\n  </div>\n</nav>\n      <router-outlet></router-outlet>\n\n<footer class=\"footer\">\n    <div class=\"container\">\n        <p class=\"text-muted\">&copy; Copyright 2018 | Condor Code factory</p>\n    </div>\n</footer>\n"
 
 /***/ }),
 
@@ -78,13 +78,15 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_tasks_tasks_component__ = __webpack_require__("../../../../../src/app/components/tasks/tasks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_authentication_service__ = __webpack_require__("../../../../../src/app/services/authentication.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth-guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_minings_minings_component__ = __webpack_require__("../../../../../src/app/components/minings/minings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_mining_service__ = __webpack_require__("../../../../../src/app/services/mining.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_authentication_service__ = __webpack_require__("../../../../../src/app/services/authentication.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__common_toastr_service__ = __webpack_require__("../../../../../src/app/common/toastr.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -112,11 +114,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var routes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_16__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__services_auth_guard_service__["a" /* AuthGuardService */]] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_15__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_17__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_auth_guard_service__["a" /* AuthGuardService */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -126,10 +130,11 @@ var AppModule = (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__components_tasks_tasks_component__["a" /* TasksComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__components_register_register_component__["a" /* RegisterComponent */]
+                __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__components_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__components_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_minings_minings_component__["a" /* MiningsComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
@@ -145,9 +150,10 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_10__ng_bootstrap_ng_bootstrap__["a" /* NgbCollapseModule */].forRoot()
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_17__services_authentication_service__["a" /* AuthenticationService */],
-                __WEBPACK_IMPORTED_MODULE_18__services_auth_guard_service__["a" /* AuthGuardService */],
-                __WEBPACK_IMPORTED_MODULE_19__common_toastr_service__["a" /* ToastrService */],
+                __WEBPACK_IMPORTED_MODULE_19__services_authentication_service__["a" /* AuthenticationService */],
+                __WEBPACK_IMPORTED_MODULE_20__services_auth_guard_service__["a" /* AuthGuardService */],
+                __WEBPACK_IMPORTED_MODULE_21__common_toastr_service__["a" /* ToastrService */],
+                __WEBPACK_IMPORTED_MODULE_18__services_mining_service__["a" /* MiningService */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_common__["i" /* LocationStrategy */], useClass: __WEBPACK_IMPORTED_MODULE_1__angular_common__["f" /* HashLocationStrategy */] }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
@@ -295,10 +301,123 @@ var LoginComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/minings/minings.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container {\n  max-width: 960px;\n}\n\n.border-top { border-top: 1px solid #e5e5e5; }\n.border-bottom { border-bottom: 1px solid #e5e5e5; }\n.border-top-gray { border-top-color: #adb5bd; }\n\n.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }\n\n.lh-condensed { line-height: 1.25; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/minings/minings.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card\">\n  <div class=\"card-body\">\n    <div class=\"col-md-12 order-md-1\">\n              <h4 class=\"mb-3\">Vista Minera</h4>\n    <form class=\"needs-validation\" (submit)=\"addMining($event)\" novalidate>\n      <div class=\"input-group\" class=\"row\">\n\n          <div class=\"col-md-6 mb-3\">\n            <label for=\"name\">Minera</label>\n            <input type=\"text\" class=\"form-control\" name=\"name\" id=\"name\" [(ngModel)]=\"name\" placeholder=\"Ex Juan Perez Codelco\" required>\n            <div class=\"invalid-feedback\">\n              Valid Minera is required.\n            </div>\n          </div>\n\n          <div class=\"col-md-6 mb-3\">\n            <label for=\"picture\">Picture</label>\n            <input type=\"text\" name=\"picture\" id=\"picture\" [(ngModel)]=\"picture\" class=\"form-control\" placeholder=\"Add A Picture\" required>\n            <div class=\"invalid-feedback\">\n              Valid Picture is required.\n            </div>\n          </div>\n\n          <div class=\"col-md-6 mb-3\">\n            <label for=\"category\">Minera</label>\n            <select class=\"custom-select d-block w-100\" name=\"category\" id=\"category\" [(ngModel)]=\"category\" required>\n              <option value=\"\" >Choose...</option>\n              <option>codelco</option>\n              <option>barrick</option>\n              <option>esperaza</option>\n            </select>\n            <div class=\"invalid-feedback\">\n              Please select a valid minera.\n            </div>\n          </div>\n\n            <div class=\"col-md-6 mb-3\">\n              <label for=\"price\">Precio</label>\n              <input type=\"text\" name=\"price\" id=\"price\" [(ngModel)]=\"price\" class=\"form-control\" placeholder=\"$\" required>\n              <div class=\"invalid-feedback\">\n                Please select a valid Price.\n              </div>\n            </div>\n\n\n            <div class=\"col-md-12 mb-3\">\n              <label for=\"description\">Description</label>\n              <input type=\"text\" class=\"form-control\" name=\"description\" id=\"description\" [(ngModel)]=\"description\" placeholder=\"Description\" required>\n              <div class=\"invalid-feedback\">\n                Description code required.\n              </div>\n            </div>\n\n\n      </div>\n      <span class=\"input-group-addon\">\n          <button class=\"btn btn-primary btn-lg btn-block\" type=\"submit\">Continue to checkout</button>\n      </span>\n    </form>\n  </div>\n\n  </div>\n</div>\n\n<table class=\"table text-center table-hover\">\n  <thead>\n    <tr>\n      <th>name</th>\n      <th>picture</th>\n      <th>price</th>\n      <th>category</th>\n      <th>description</th>\n      <th>Operations</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let mining of minings\">\n\n      <td>{{ mining.name }}</td>\n      <td>{{ mining.picture }}</td>\n      <td>{{ mining.price }}</td>\n      <td>{{ mining.category }}</td>\n      <td>{{ mining.description }}</td>\n      <td>\n        <swal\n          #deleteSwal\n          title=\"Delete {{ mining.name }}?\"\n          text=\"Swal confirm\"\n          type=\"warning\"\n          [showCancelButton]=\"true\"\n          [focusCancel]=\"true\"\n          (confirm)=\"deleteMining(mining._id)\">\n        </swal>\n        <button class=\"btn btn-danger\" (click)=\"deleteSwal.show()\">\n          <i class=\"fa fa-trash\"></i>\n        </button>\n      </td>\n    </tr>\n  </tbody>\n</table>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/minings/minings.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MiningsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_mining_service__ = __webpack_require__("../../../../../src/app/services/mining.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MiningsComponent = (function () {
+    function MiningsComponent(miningService) {
+        var _this = this;
+        this.miningService = miningService;
+        this.miningService.getMinings()
+            .subscribe(function (minings) {
+            console.log(minings);
+            _this.minings = minings;
+        });
+    }
+    MiningsComponent.prototype.ngOnInit = function () {
+    };
+    MiningsComponent.prototype.addMining = function (event) {
+        var _this = this;
+        event.preventDefault();
+        console.log(this.name);
+        console.log(this.picture);
+        console.log(this.price);
+        console.log(this.category);
+        console.log(this.description);
+        var newMining = {
+            name: this.name,
+            picture: this.picture,
+            price: this.price,
+            category: this.category,
+            description: this.description
+        };
+        this.miningService.addMining(newMining)
+            .subscribe(function (mining) {
+            _this.minings.push(mining);
+            _this.name = '';
+            _this.picture = '';
+            _this.price = '';
+            _this.category = '';
+            _this.description = '';
+        });
+    };
+    MiningsComponent.prototype.deleteMining = function (id) {
+        if (!id == false) {
+            var minings_1 = this.minings;
+            this.miningService.deleteMining(id)
+                .subscribe(function (data) {
+                // console.log(data)
+                // console.log(data.n);
+                if (data.n == 1) {
+                    for (var i = 0; i < minings_1.length; i++) {
+                        if (minings_1[i]._id == id) {
+                            minings_1.splice(i, 1);
+                        }
+                    }
+                }
+            });
+        }
+    };
+    MiningsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-minings',
+            template: __webpack_require__("../../../../../src/app/components/minings/minings.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/minings/minings.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__services_mining_service__["a" /* MiningService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_mining_service__["a" /* MiningService */]])
+    ], MiningsComponent);
+    return MiningsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card m-5\">\n  <div class=\"card-body\">\n\n\n\n      <h1 class=\"form-signin-heading\">Your profile Tasks</h1>\n\n      <div class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <p class=\"form-control-static\"><fa name=\"user\"></fa> {{ details?.name }} - <fa name=\"envelope\"></fa> {{ details?.email }}</p>\n          <p class=\"form-control-static\"></p>\n        </div>\n      </div>\n\n\n\n      <app-tasks></app-tasks>\n\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"card m-5\">\n  <div class=\"card-body\">\n\n\n\n      <h1 class=\"form-signin-heading\">Your profile Tasks</h1>\n\n      <div class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <p class=\"form-control-static\">\n            <fa name=\"user\"></fa>\n              {{ details?.name }} -\n            <fa name=\"envelope\"></fa>\n            {{ details?.email }}\n          </p>\n          <p class=\"form-control-static\"></p>\n        </div>\n      </div>\n\n\n      <app-minings></app-minings>\n      <app-tasks></app-tasks>\n\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -476,6 +595,7 @@ var TasksComponent = (function () {
             var tasks_1 = this.tasks;
             this.taskService.deleteTask(id)
                 .subscribe(function (data) {
+                console.log(data);
                 console.log(data.n);
                 if (data.n == 1) {
                     for (var i = 0; i < tasks_1.length; i++) {
@@ -653,6 +773,58 @@ var AuthenticationService = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]])
     ], AuthenticationService);
     return AuthenticationService;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/mining.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MiningService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MiningService = (function () {
+    function MiningService(http) {
+        this.http = http;
+        this.domain = 'http://localhost:3000';
+    }
+    MiningService.prototype.getMinings = function () {
+        return this.http.get(this.domain + "/api/mining")
+            .map(function (res) { return res; });
+    };
+    MiningService.prototype.addMining = function (newMining) {
+        return this.http.post(this.domain + "/api/mining", newMining)
+            .map(function (res) { return res; });
+    };
+    MiningService.prototype.deleteMining = function (id) {
+        return this.http.delete(this.domain + "/api/mining/" + id)
+            .map(function (res) { return res; });
+    };
+    MiningService.prototype.updateMining = function (newMining) {
+        return this.http.put(this.domain + "/api/mining/" + newMining._id, newMining)
+            .map(function (res) { return res; });
+    };
+    MiningService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], MiningService);
+    return MiningService;
 }());
 
 

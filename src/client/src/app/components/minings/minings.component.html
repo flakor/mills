@@ -1,0 +1,100 @@
+<div class="card">
+  <div class="card-body">
+    <div class="col-md-12 order-md-1">
+              <h4 class="mb-3">Vista Minera</h4>
+    <form class="needs-validation" (submit)="addMining($event)" novalidate>
+      <div class="input-group" class="row">
+
+          <div class="col-md-6 mb-3">
+            <label for="name">Minera</label>
+            <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" placeholder="Ex Juan Perez Codelco" required>
+            <div class="invalid-feedback">
+              Valid Minera is required.
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="picture">Picture</label>
+            <input type="text" name="picture" id="picture" [(ngModel)]="picture" class="form-control" placeholder="Add A Picture" required>
+            <div class="invalid-feedback">
+              Valid Picture is required.
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="category">Minera</label>
+            <select class="custom-select d-block w-100" name="category" id="category" [(ngModel)]="category" required>
+              <option value="" >Choose...</option>
+              <option>codelco</option>
+              <option>barrick</option>
+              <option>esperaza</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid minera.
+            </div>
+          </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="price">Precio</label>
+              <input type="text" name="price" id="price" [(ngModel)]="price" class="form-control" placeholder="$" required>
+              <div class="invalid-feedback">
+                Please select a valid Price.
+              </div>
+            </div>
+
+
+            <div class="col-md-12 mb-3">
+              <label for="description">Description</label>
+              <input type="text" class="form-control" name="description" id="description" [(ngModel)]="description" placeholder="Description" required>
+              <div class="invalid-feedback">
+                Description code required.
+              </div>
+            </div>
+
+
+      </div>
+      <span class="input-group-addon">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+      </span>
+    </form>
+  </div>
+
+  </div>
+</div>
+
+<table class="table text-center table-hover">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>picture</th>
+      <th>price</th>
+      <th>category</th>
+      <th>description</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mining of minings">
+
+      <td>{{ mining.name }}</td>
+      <td>{{ mining.picture }}</td>
+      <td>{{ mining.price }}</td>
+      <td>{{ mining.category }}</td>
+      <td>{{ mining.description }}</td>
+      <td>
+        <swal
+          #deleteSwal
+          title="Delete {{ mining.name }}?"
+          text="Swal confirm"
+          type="warning"
+          [showCancelButton]="true"
+          [focusCancel]="true"
+          (confirm)="deleteMining(mining._id)">
+        </swal>
+        <button class="btn btn-danger" (click)="deleteSwal.show()">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

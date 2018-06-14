@@ -12,6 +12,7 @@ const auth = jwt({
 });
 
 const ctrlProfile = require('../controllers/profile');
+const ctrlMining= require('../controllers/mining');
 const ctrlAuth = require('../controllers/authentication');
 
 // API USUARIOS
@@ -23,7 +24,26 @@ router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 /////////////////////////////////////////
 
+// pruebas//////////////////////////////////////////
+router.get('/hola/:name', (req, res, next) =>{
+  res.send({message: `hola ${req.params.name}!`})
 
+})
+//
+router.get('/mining', ctrlMining.getMinings);
+//
+router.get('/mining/:miningId', ctrlMining.getMining);
+//
+router.post('/mining', ctrlMining.postMining);
+//
+router.put('/mining/:miningId', ctrlMining.updateMining);
+//
+router.delete('/mining/:miningId', ctrlMining.deleteMining);
+
+
+
+
+/////////////////////////////////////////////////
 // GET All tasks
 router.get('/tasks', (req, res, next) => {
     db.tasks.find((err, tasks) => {

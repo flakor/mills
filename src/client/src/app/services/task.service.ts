@@ -5,10 +5,6 @@ import 'rxjs/add/operator/map';
 
 import { Task } from '../Task' ;
 
-
-
-
-
 @Injectable()
 export class TaskService {
   // domain: string = 'http://localhost:3000';
