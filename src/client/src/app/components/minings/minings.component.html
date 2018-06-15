@@ -36,7 +36,7 @@
 
             <div class="col-md-6 mb-3">
               <label for="price">Precio</label>
-              <input type="text" name="price" id="price" [(ngModel)]="price" class="form-control" placeholder="$" required>
+              <input type="number" name="price" id="price" [(ngModel)]="price" class="form-control" placeholder="$" required>
               <div class="invalid-feedback">
                 Please select a valid Price.
               </div>
@@ -94,6 +94,87 @@
         <button class="btn btn-danger" (click)="deleteSwal.show()">
           <i class="fa fa-trash"></i>
         </button>
+
+
+        <!--  modal bootstrap-->
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-warning" data-toggle="modal" [attr.data-target]="'#' + mining._id" >
+              <i class="fa fa-edit"></i>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="{{ mining._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit {{ mining.name }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="needs-validation" (submit)="addMining($event)" novalidate>
+                      <div class="input-group" class="row">
+
+                          <div class="col-md-6 mb-3">
+                            <label for="name">Minera</label>
+                            <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" placeholder="{{ mining.name }}" required>
+                            <div class="invalid-feedback">
+                              Valid Minera is required.
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                            <label for="picture">Picture</label>
+                            <input type="text" name="picture" id="picture" [(ngModel)]="picture" class="form-control" placeholder="{{ mining.picture }}" required>
+                            <div class="invalid-feedback">
+                              Valid Picture is required.
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                            <label for="category">Minera</label>
+                            <select class="custom-select d-block w-100" name="category" id="category" [(ngModel)]="category" required>
+                              <option value="" >Choose...</option>
+                              <option>codelco</option>
+                              <option>barrick</option>
+                              <option>esperaza</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              Please select a valid minera.
+                            </div>
+                          </div>
+
+                            <div class="col-md-6 mb-3">
+                              <label for="price">Precio</label>
+                              <input type="number" name="price" id="price" [(ngModel)]="price" class="form-control" placeholder="{{ mining.price }}" required>
+                              <div class="invalid-feedback">
+                                Please select a valid Price.
+                              </div>
+                            </div>
+
+
+                            <div class="col-md-12 mb-3">
+                              <label for="description">Description</label>
+                              <input type="text" class="form-control" name="description" id="description" [(ngModel)]="description" placeholder="{{ mining.description }}" required>
+                              <div class="invalid-feedback">
+                                Description code required.
+                              </div>
+                            </div>
+
+
+                      </div>
+
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!--  end modal bootstrap-->
       </td>
     </tr>
   </tbody>
