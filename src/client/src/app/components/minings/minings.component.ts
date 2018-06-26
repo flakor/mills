@@ -11,7 +11,7 @@ import { Mining } from '../../Mining';
   providers: [MiningService]
 })
 export class MiningsComponent implements OnInit {
-  @ViewChild('btnClose') btnClose : ElementRef;
+  @ViewChild('btnClose') btnClose : ElementRef 
 
   minings: Mining[];
   _id?: string;
