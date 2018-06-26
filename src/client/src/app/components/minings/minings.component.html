@@ -1,66 +1,92 @@
 <div class="card">
   <div class="card-body">
-    <div class="col-md-12 order-md-1">
-              <h4 class="mb-3">Vista Minera</h4>
-    <form class="needs-validation" (submit)="addMining($event)" novalidate>
-      <div class="input-group" class="row">
+    <h4 class="mb-3">Vista Minera</h4>
+    <!--  modal bootstrap-->
+    <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAdd" >
+          <i class="fa fa-plus"></i>
+        </button>
 
-          <div class="col-md-6 mb-3">
-            <label for="name">Minera</label>
-            <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" placeholder="Ex Juan Perez Codelco" required>
-            <div class="invalid-feedback">
-              Valid Minera is required.
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-3">
-            <label for="picture">Picture</label>
-            <input type="text" name="picture" id="picture" [(ngModel)]="picture" class="form-control" placeholder="Add A Picture" required>
-            <div class="invalid-feedback">
-              Valid Picture is required.
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-3">
-            <label for="category">Minera</label>
-            <select class="custom-select d-block w-100" name="category" id="category" [(ngModel)]="category" required>
-              <option value="" >Choose...</option>
-              <option>codelco</option>
-              <option>barrick</option>
-              <option>esperaza</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid minera.
-            </div>
-          </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="price">Precio</label>
-              <input type="number" name="price" id="price" [(ngModel)]="price" class="form-control" placeholder="$" required>
-              <div class="invalid-feedback">
-                Please select a valid Price.
+        <!-- Modal -->
+        <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Mining View</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-            </div>
+                <form class="needs-validation" (submit)="addMining($event)" novalidate>
+              <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                          <h4 class="mb-3">Vista Minera</h4>
+
+                  <div class="input-group" class="row">
+
+                      <div class="col-md-6 mb-3">
+                        <label for="name">Minera</label>
+                        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" placeholder="Ex Juan Perez Codelco" required>
+                        <div class="invalid-feedback">
+                          Valid Minera is required.
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="picture">Picture</label>
+                        <input type="text" name="picture" id="picture" [(ngModel)]="picture" class="form-control" placeholder="Add A Picture" required>
+                        <div class="invalid-feedback">
+                          Valid Picture is required.
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="category">Minera</label>
+                        <select class="custom-select d-block w-100" name="category" id="category" [(ngModel)]="category" required>
+                          <option value="" >Choose...</option>
+                          <option>codelco</option>
+                          <option>barrick</option>
+                          <option>esperaza</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid minera.
+                        </div>
+                      </div>
+
+                        <div class="col-md-6 mb-3">
+                          <label for="price">Precio</label>
+                          <input type="number" name="price" id="price" [(ngModel)]="price" class="form-control" placeholder="$" required>
+                          <div class="invalid-feedback">
+                            Please select a valid Price.
+                          </div>
+                        </div>
 
 
-            <div class="col-md-12 mb-3">
-              <label for="description">Description</label>
-              <input type="text" class="form-control" name="description" id="description" [(ngModel)]="description" placeholder="Description" required>
-              <div class="invalid-feedback">
-                Description code required.
+                        <div class="col-md-12 mb-3">
+                          <label for="description">Description</label>
+                          <input type="text" class="form-control" name="description" id="description" [(ngModel)]="description" placeholder="Description" required>
+                          <div class="invalid-feedback">
+                            Description code required.
+                          </div>
+                        </div>
+
+
+                  </div>
+
+
               </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" #btnClose class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" >Save changes</button>
+              </div>
+                </form>
             </div>
+          </div>
+        </div>
+    <!--  end modal bootstrap-->
 
 
-      </div>
-      <span class="input-group-addon">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
-      </span>
-    </form>
-  </div>
-
-  </div>
-</div>
 
 <table class="table text-center table-hover">
   <thead>
@@ -179,3 +205,6 @@
     </tr>
   </tbody>
 </table>
+
+  </div>
+</div>

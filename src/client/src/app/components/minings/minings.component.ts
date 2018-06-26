@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewChild, Component, OnInit, ElementRef } from '@angular/core';
 import { MiningService } from '../../services/mining.service';
 import { Mining } from '../../Mining';
+
 
 
 @Component({
@@ -10,6 +11,8 @@ import { Mining } from '../../Mining';
   providers: [MiningService]
 })
 export class MiningsComponent implements OnInit {
+  @ViewChild('btnClose') btnClose : ElementRef;
+
   minings: Mining[];
   _id?: string;
   name: string;
@@ -55,6 +58,8 @@ export class MiningsComponent implements OnInit {
         this.price = '';
         this.category = '';
         this.description = '';
+        this.btnClose.nativeElement.click();
+        // this.modalAdd.close();
       })
   }
   deleteMining(id) {
