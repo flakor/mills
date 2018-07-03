@@ -1,6 +1,16 @@
 <div class="card">
   <div class="card-body">
     <h4 class="mb-3">Vista Minera</h4>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+        aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+          40% Complete (success)
+        </div>
+      </div>
+
+
+
+    <br>
     <!--  modal bootstrap-->
     <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAdd" >
@@ -12,7 +22,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Mining View</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add Mining View</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -102,7 +112,7 @@
   <tbody>
     <tr *ngFor="let mining of minings">
 
-      <td>{{ mining.name }}</td>
+      <td >{{ mining.name }}</td>
       <td>{{ mining.picture }}</td>
       <td>{{ mining.price }}</td>
       <td>{{ mining.category }}</td>
@@ -139,7 +149,7 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form class="needs-validation" (submit)="addMining($event)" novalidate>
+                    <!-- <form class="needs-validation"  novalidate> -->
                       <div class="input-group" class="row">
 
                           <div class="col-md-6 mb-3">
@@ -191,11 +201,11 @@
 
                       </div>
 
-                    </form>
+                    <!-- </form> -->
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" #btnCloseEdit class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="updateMining(mining)">Save changes</button>
                   </div>
                 </div>
               </div>

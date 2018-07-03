@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
 
-import { Mining } from '../Mining' ;
+import { Mining } from '../models/Mining' ;
 
 @Injectable()
 export class MiningService {
