@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Mining = mongoose.model('Mining');
+var Task = mongoose.model('Task');
 
 module.exports = {
 

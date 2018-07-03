@@ -45,7 +45,7 @@ router.delete('/mining/:miningId', ctrlMining.deleteMining);
 ////////////////////Task/////////////////////////////
 
 
-router.get('/task', ctrlTask.getTasks);
+router.get('/tasks', ctrlTask.getTasks);
 
 router.get('/task/:taskId', ctrlTask.getTask);
 

@@ -10,8 +10,8 @@ import { Task } from '../models/Task' ;
 @Injectable()
 export class TaskService {
 
-  // domain: string = 'http://localhost:3000';
- domain: string = 'https://new-mills.herokuapp.com';
+  domain: string = 'http://localhost:3000';
+ // domain: string = 'https://new-mills.herokuapp.com';
 
   constructor(private http: HttpClient) {
   }
@@ -22,17 +22,17 @@ export class TaskService {
   }
 
   addTask(newTask: Task) {
-    return this.http.post<Task>(`${this.domain}/api/tasks`, newTask)
+    return this.http.post<Task>(`${this.domain}/api/task`, newTask)
       .map(res => res);
   }
 
   deleteTask(id) {
-    return this.http.delete<Task>(`${this.domain}/api/tasks/${id}`)
+    return this.http.delete<Task>(`${this.domain}/api/task/${id}`)
       .map(res => res);
   }
 
   updateTask(newTask) {
-    return this.http.put<Task>(`${this.domain}/api/tasks/${newTask._id}`, newTask)
+    return this.http.put<Task>(`${this.domain}/api/task/${newTask._id}`, newTask)
       .map(res => res)
   }
 }

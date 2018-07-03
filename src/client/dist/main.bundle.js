@@ -831,10 +831,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MiningService = (function () {
+    // domain: string = 'https://new-mills.herokuapp.com';
     function MiningService(http) {
         this.http = http;
-        //domain: string = 'http://localhost:3000';
-        this.domain = 'https://new-mills.herokuapp.com';
+        this.domain = 'http://localhost:3000';
     }
     MiningService.prototype.getMinings = function () {
         return this.http.get(this.domain + "/api/mining")
@@ -887,25 +887,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // console.log('preuba');
 // console.log(domain: Config[]);
 var TaskService = (function () {
+    // domain: string = 'https://new-mills.herokuapp.com';
     function TaskService(http) {
         this.http = http;
-        // domain: string = 'http://localhost:3000';
-        this.domain = 'https://new-mills.herokuapp.com';
+        this.domain = 'http://localhost:3000';
     }
     TaskService.prototype.getTasks = function () {
         return this.http.get(this.domain + "/api/tasks")
             .map(function (res) { return res; });
     };
     TaskService.prototype.addTask = function (newTask) {
-        return this.http.post(this.domain + "/api/tasks", newTask)
+        return this.http.post(this.domain + "/api/task", newTask)
             .map(function (res) { return res; });
     };
     TaskService.prototype.deleteTask = function (id) {
-        return this.http.delete(this.domain + "/api/tasks/" + id)
+        return this.http.delete(this.domain + "/api/task/" + id)
             .map(function (res) { return res; });
     };
     TaskService.prototype.updateTask = function (newTask) {
-        return this.http.put(this.domain + "/api/tasks/" + newTask._id, newTask)
+        return this.http.put(this.domain + "/api/task/" + newTask._id, newTask)
             .map(function (res) { return res; });
     };
     TaskService = __decorate([
