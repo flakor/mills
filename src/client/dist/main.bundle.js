@@ -448,7 +448,7 @@ var MiningsComponent = (function () {
 /***/ "../../../../../src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card m-5\">\n  <div class=\"card-body\">\n\n\n\n      <h1 class=\"form-signin-heading\">Your profile Tasks</h1>\n\n      <div class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <p class=\"form-control-static\">\n            <fa name=\"user\"></fa>\n              {{ details?.name }} -\n            <fa name=\"envelope\"></fa>\n            {{ details?.email }}\n          </p>\n          <p class=\"form-control-static\"></p>\n        </div>\n      </div>\n\n\n      <app-minings></app-minings>\n      <app-tasks></app-tasks>\n\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"card m-5\">\n  <div class=\"card-body\">\n\n\n\n      <h1 class=\"form-signin-heading\">Your profile Tasks</h1>\n\n      <div class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <p class=\"form-control-static\">\n            <fa name=\"user\"></fa>\n              {{ details?.name }} -\n            <fa name=\"envelope\"></fa>\n            {{ details?.email }}\n          </p>\n          <p class=\"form-control-static\"></p>\n        </div>\n      </div>\n\n\n      <app-minings></app-minings>\n      <br>\n      <app-tasks></app-tasks>\n\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -831,10 +831,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MiningService = (function () {
-    // domain: string = 'https://new-mills.herokuapp.com';
     function MiningService(http) {
         this.http = http;
-        this.domain = 'http://localhost:3000';
+        // domain: string = 'http://localhost:3000';
+        this.domain = 'https://new-mills.herokuapp.com';
     }
     MiningService.prototype.getMinings = function () {
         return this.http.get(this.domain + "/api/mining")
@@ -887,10 +887,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // console.log('preuba');
 // console.log(domain: Config[]);
 var TaskService = (function () {
-    // domain: string = 'https://new-mills.herokuapp.com';
     function TaskService(http) {
         this.http = http;
-        this.domain = 'http://localhost:3000';
+        // domain: string = 'http://localhost:3000';
+        this.domain = 'https://new-mills.herokuapp.com';
     }
     TaskService.prototype.getTasks = function () {
         return this.http.get(this.domain + "/api/tasks")

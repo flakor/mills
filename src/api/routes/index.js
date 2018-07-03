@@ -22,12 +22,12 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 /////////////////////////////////////////
-
-// pruebas//////////////////////////////////////////
-router.get('/hola/:name', (req, res, next) =>{
-  res.send({message: `hola ${req.params.name}!`})
-
-})
+//
+// // pruebas//////////////////////////////////////////
+// router.get('/hola/:name', (req, res, next) =>{
+//   res.send({message: `hola ${req.params.name}!`})
+//
+// })
 //
 router.get('/mining', ctrlMining.getMinings);
 //
