@@ -13,7 +13,6 @@ const ctrlProfile = require('../controllers/profile');
 const ctrlMining= require('../controllers/mining');
 const ctrlAuth = require('../controllers/authentication');
 const ctrlTask = require('../controllers/task');
-const ctrlMqtt = require('../controllers/mqtt');
 
 // API USUARIOS
 // profile
@@ -57,8 +56,5 @@ router.delete('/task/:taskId', ctrlTask.deleteTask);
 router.put('/task/:taskId', ctrlTask.updateTask);
 
 
-// MQTT //
-router.get('/mqtt', ctrlMqtt.getMqtt);
 
-//
 module.exports = router;
