@@ -40,7 +40,7 @@ module.exports = {
   // },
   // postMqtt: function(req, res) {
   getMqtt: function(req, res) {
-    console.log('POST /api/mqtt');
+    console.log('POST /api/mqtt prueba  qlia');
     // console.log(req.body);
     console.log('antes del cliente');
 
