@@ -58,7 +58,7 @@ router.put('/task/:taskId', ctrlTask.updateTask);
 
 
 // MQTT //
-// router.get('/mqtt', ctrlMqtt.getMqtt);
+router.get('/mqtt', ctrlMqtt.getMqtt);
 
 //
 module.exports = router;
