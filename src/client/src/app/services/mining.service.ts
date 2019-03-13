@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/map';
 
 import { Mining } from '../models/Mining' ;
 
 @Injectable()
 export class MiningService {
-  // domain: string = 'http://localhost:3000';
-  domain: string = 'https://new-mills.herokuapp.com';
+ 
+  domain: string = environment.domain;
   constructor(private http: HttpClient) {}
 
     getMinings(){

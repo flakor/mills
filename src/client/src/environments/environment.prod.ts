@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  domain: 'https://new-mills.herokuapp.com'
 };

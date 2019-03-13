@@ -7,18 +7,19 @@ firebase.initializeApp({
   databaseURL: 'https://'+config.project_id+'.firebaseio.com'
 });
 
-firebase.database().ref('casa').on('connected', function() {
-  // console.log('Mongoose connected to ' + dbURI);
-  console.log('fiebase connected to ');
-});
+// firebase.database().ref('casa').on('connected', function() {
+//   // console.log('Mongoose connected to ' + dbURI);
+//   console.log('fiebase connected to ');
+// });
 
-firebaseRef.child('.info/connected').on('value', function(connectedSnap) {
-  if (connectedSnap.val() === true) {
-    /* we're connected! */
-  } else {
-    /* we're disconnected! */
-  }
-});
+// firebaseRef.child('.info/connected').on('value', function(connectedSnap) {
+//   if (connectedSnap.val() === true) {
+//     /* we're connected! */
+//     console.log('fiebase connected to: '+config.project_id);
+//   } else {
+//     /* we're disconnected! */
+//   }
+// });
 
 
 
@@ -29,23 +30,18 @@ module.exports = {
 
   postElement: function(req, res) {
 
-      // Task.find((err, tasks) => {
-      //   if(err) return res.status(500).send({message:`erroor petidiicon findone ${err}`});
-      //   if(!tasks) return res.status(404).send({message:'el mining no existe'});
-      //     res.status(200).send(tasks)
-      //
-      // })
-
+    // console.log("req.mensaje");
+    // console.log(req.body.mensaje);
+     
       let ref = firebase.database().ref('casa');
-
-      // let messagesRef = ref.child('temperatura');
       let messagesRef = ref.child('messages');
 
       let messageRef = messagesRef.push();
       let messageKey = messageRef.key;
       let payload = {};
       let message = {
-        text: 'hey guy pablo pablo'
+        text: req.body.mensaje
+        // text: 'hey guy pablo pablo'
       };
       // for (var i = 0; i < 10; i++) {
       //   console.log(messagesRef.push().key);
@@ -88,7 +84,7 @@ module.exports = {
           console.log('changed', snap.val());
       });
 
-      // res.status(200).send({mensaje:'firebase actualizado',logs: logs })
+      res.status(200).send({info:'firebase actualizado', message})
   }
   // getTask: function (req, res) {
   //

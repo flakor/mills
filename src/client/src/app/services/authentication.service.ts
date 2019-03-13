@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 export interface UserDetails {
   _id: string;
@@ -25,8 +26,8 @@ export interface TokenPayload {
 @Injectable()
 export class AuthenticationService {
   private token: string;
-// domain: string = 'http://localhost:3000';
-  domain: string = 'https://new-mills.herokuapp.com';
+
+  domain: string = environment.domain;
 
   constructor(private http: HttpClient, private router: Router) {}
 

@@ -59,6 +59,6 @@ router.put('/task/:taskId', ctrlTask.updateTask);
 
 /////////////////firebase///////////////////////////
 
-router.get('/firebase', ctrlFirebase.postElement); //cambiar a post
+router.post('/firebase', ctrlFirebase.postElement); //cambiar a post
 
 module.exports = router;

@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
-import { Config } from '../config'
+import { environment } from '../../environments/environment';
 import { Task } from '../models/Task' ;
-console.log(Config);
-// console.log('preuba');
-// console.log(domain: Config[]);
+
+// console.log(environment.domain);
+
 @Injectable()
 export class TaskService {
 
-  // domain: string = 'http://localhost:3000';
- domain: string = 'https://new-mills.herokuapp.com';
+  domain: string = environment.domain;
 
 
 
