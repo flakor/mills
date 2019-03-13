@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  domain: 'http://localhost:3000'
+  // domain: 'http://localhost:3000',
+  domain: 'https://new-mills.herokuapp.com',
 };

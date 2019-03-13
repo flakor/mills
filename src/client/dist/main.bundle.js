@@ -966,7 +966,8 @@ var TaskService = (function () {
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: false,
-    domain: 'http://localhost:3000'
+    // domain: 'http://localhost:3000',
+    domain: 'https://new-mills.herokuapp.com',
 };
 
 
