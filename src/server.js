@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const config = require('./config');
 const passport = require('passport');
 const app = express();
+
 //carga la BD Users
 require('./api/models/db');
 //carga passport

@@ -13,12 +13,20 @@ import { Task } from '../../models/Task';
 export class TasksComponent implements OnInit {
   tasks: Task[];
   title: string;
+  loading: boolean;
 
   constructor(private taskService: TaskService) {
+    this.loading = true;
     this.taskService.getTasks()
       .subscribe(tasks => {
-        console.log(tasks);
-        this.tasks = tasks;
+
+        if (!tasks){
+          console.log('error server');
+        }else{
+          this.loading = false;
+          console.log(tasks);
+          this.tasks = tasks;
+        }
       });
   }
 
@@ -36,6 +44,7 @@ export class TasksComponent implements OnInit {
       .subscribe(task => {
         this.tasks.push(task);
         this.title = '';
+
       })
   }
 

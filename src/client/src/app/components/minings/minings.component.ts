@@ -22,14 +22,21 @@ export class MiningsComponent implements OnInit {
   category: string;
   description: string;
 
-
+  loading: boolean;
 
 
   constructor(private miningService: MiningService) {
+    this.loading = true;
     this.miningService.getMinings()
       .subscribe(minings => {
-        console.log(minings);
-        this.minings = minings;
+
+        if (!minings){
+          console.log('error server');
+        }else{
+          this.loading = false;
+          console.log(minings);
+          this.minings = minings;
+        }
       });
   }
 

@@ -1,3 +1,5 @@
+
+
 <div class="card">
   <div class="card-body">
     <h4 class="mb-3">Vista Task</h4>
@@ -22,6 +24,11 @@
     </tr>
   </thead>
   <tbody>
+
+    <div  class="loading" *ngIf="loading">
+        <img src="../../assets/img/loader.gif">
+
+    </div>
     <tr *ngFor="let task of tasks">
       <td>
 
@@ -29,7 +36,7 @@
           <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
           <span class="slider round"></span>
         </label>
-    
+
       </td>
       <td>{{ task.title }}</td>
       <td>

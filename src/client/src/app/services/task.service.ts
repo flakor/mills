@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Config } from '../config'
 import { Task } from '../models/Task' ;
-// console.log(Config);
+console.log(Config);
 // console.log('preuba');
 // console.log(domain: Config[]);
 @Injectable()
@@ -13,7 +13,10 @@ export class TaskService {
   // domain: string = 'http://localhost:3000';
  domain: string = 'https://new-mills.herokuapp.com';
 
+
+
   constructor(private http: HttpClient) {
+
   }
 
   getTasks() {

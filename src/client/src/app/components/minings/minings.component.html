@@ -18,11 +18,11 @@
         </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Mining View</h5>
+                <h5 class="modal-title" id="addModalLabel">Add Mining View</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -110,6 +110,10 @@
     </tr>
   </thead>
   <tbody>
+    <div  class="loading" *ngIf="loading">
+        <img src="../../assets/img/loader.gif">
+
+    </div>
     <tr *ngFor="let mining of minings">
 
       <td >{{ mining.name }}</td>
@@ -139,11 +143,11 @@
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="{{ mining._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="{{ mining._id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit {{ mining.name }}</h5>
+                    <h5 class="modal-title" id="editModalLabel">Edit {{ mining.name }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>

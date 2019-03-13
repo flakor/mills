@@ -13,6 +13,7 @@ const ctrlProfile = require('../controllers/profile');
 const ctrlMining= require('../controllers/mining');
 const ctrlAuth = require('../controllers/authentication');
 const ctrlTask = require('../controllers/task');
+const ctrlFirebase = require('../controllers/firebase');
 
 // API USUARIOS
 // profile
@@ -29,6 +30,7 @@ router.post('/login', ctrlAuth.login);
 //
 // })
 //
+
 router.get('/mining', ctrlMining.getMinings);
 //
 router.get('/mining/:miningId', ctrlMining.getMining);
@@ -55,6 +57,8 @@ router.delete('/task/:taskId', ctrlTask.deleteTask);
 
 router.put('/task/:taskId', ctrlTask.updateTask);
 
+/////////////////firebase///////////////////////////
 
+router.get('/firebase', ctrlFirebase.postElement); //cambiar a post
 
 module.exports = router;
