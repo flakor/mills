@@ -7,3 +7,12 @@ proyecto molinos sag
 ## docker push flakor/mills_crud
 
 ## prueba CI heroku
+
+## cmd docker 
+
+
+## ctrl +pq
+## docker commit d68 endpointdgrale
+## time sudo docker build -t bla .
+## sudo docker run -ti -p 3000:3000 bla /bin/bash
+
