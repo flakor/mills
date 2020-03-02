@@ -5,12 +5,12 @@ const jwt = require('express-jwt');
 //////////////////////API USER/////////////
 
 const auth = jwt({
-  secret: config.secret,
-  userProperty: 'payload'
+    secret: config.secret,
+    userProperty: 'payload'
 });
 
 const ctrlProfile = require('../controllers/profile');
-const ctrlMining= require('../controllers/mining');
+const ctrlMining = require('../controllers/mining');
 const ctrlAuth = require('../controllers/authentication');
 const ctrlTask = require('../controllers/task');
 const ctrlFirebase = require('../controllers/firebase');
@@ -23,13 +23,7 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 /////////////////////////////////////////
-//
-// // pruebas//////////////////////////////////////////
-// router.get('/hola/:name', (req, res, next) =>{
-//   res.send({message: `hola ${req.params.name}!`})
-//
-// })
-//
+
 
 router.get('/mining', ctrlMining.getMinings);
 //
